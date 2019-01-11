@@ -48,3 +48,9 @@ install-LAMP:
 	$(call apt_update)
 	$(call apt_upgrade)
 	$(call apt_install,wget build-essential apache2 php apache2-mod-php7.0 php-gd libgd-dev sendmail unzip) # adding LAMP packages
+
+
+# Main Target
+.PHONY: Build-Nagios
+Build-Nagios:
+	system install-LAMP
