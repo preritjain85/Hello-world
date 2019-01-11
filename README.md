@@ -32,13 +32,14 @@ Vagrant.configure("2") do |config|
 ```bash
 vagrant up Nagios-16.04
 vagrant ssh Nagios-16.04
+
 sudo mkdir -p /site
-sudo chown ubuntu /site
+sudo chown vagrant /site
 cd /site
 git clone https://github.com/preritjain85/Nagios-local.git
 cd /Nagios-local
 
-# do the make step to build system
+# do the make step to Build Nagios system
 make Build-Nagios
 
 ## Indiviual Targets
