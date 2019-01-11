@@ -52,5 +52,4 @@ install-LAMP:
 
 # Main Target
 .PHONY: Build-Nagios
-Build-Nagios:
-	system install-LAMP
+Build-Nagios: system install-LAMP
