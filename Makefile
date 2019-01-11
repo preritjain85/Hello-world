@@ -38,6 +38,13 @@ system: user
 	curl -L https://cpanmin.us | perl - --sudo App::cpanminus
 	sudo cpanm Apache2::Upload --notest
 	sudo cpanm File::FindLib
-	sudo chmod -R a+rx /usr/local/share/perl/ # do we really need this?
+	sudo chmod -R a+rx /usr/local/share/perl/
 	sudo mkdir -p $(SITE_DIR)
 	$(call set_permission,$(SITE_DIR),$(USER))
+
+# LAMP Package install 
+.PHONY: install-LAMP
+install-LAMP:
+	$(call apt_update)
+	$(call apt_upgrade)
+	$(call apt_install,wget build-essential apache2 php apache2-mod-php7.0 php-gd libgd-dev sendmail unzip) # adding LAMP packages
