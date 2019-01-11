@@ -36,11 +36,13 @@ sudo mkdir -p /site
 sudo chown ubuntu /site
 cd /site
 git clone https://github.com/preritjain85/Nagios-local.git
+cd /Nagios-local
 
+# do the make step to build system
+make Build-Nagios
 
-# do the make steps ...
-make Nagios
+## Indiviual Targets
+1] user		 / create user with user & group as nagios
+2] system        / package dependency
+3] install-LAMP  / Installing LAMP package locally 
 
-## Targets
-
-This builds Nagios inside a local VM.
